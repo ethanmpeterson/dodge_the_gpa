@@ -38,6 +38,8 @@ function Obstacle(img) {
     }
     this.box.update(this.x, this.y);
     image(this.img, this.x, this.y, this.w, this.h);
+    fill(255, 0, 0, 127);
+    rect(this.x, this.y, this.w, this.h);
     return this.box.check(tamBox);
   }
   

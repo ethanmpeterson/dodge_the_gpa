@@ -31,8 +31,7 @@ function draw() {
         break;
       }
     }
-    image(img, mouseX, mouseY, img.width / 3, img.height / 3);
-    tam.update(mouseX, mouseY);
+    drawTam();
     drawHUD();
   } else if (mode == 1) {
     gameOverScreen();
@@ -43,6 +42,13 @@ function getObstacles() {
   for (var i = 0; i < 3; i = i + 1) {
     obstacles[i] = new Obstacle(imgs[i]);
   }
+}
+
+function drawTam() {
+  image(img, mouseX, mouseY, img.width / 3, img.height / 3);
+  fill(255, 0, 0, 127);
+  rect(mouseX, mouseY, img.width / 3, img.height / 3);
+  tam.update(mouseX, mouseY);
 }
 
 function drawHUD() {
