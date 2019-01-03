@@ -6,6 +6,8 @@ var obstacles = [0, 0, 0, 0]; // max of 4 obstacles at any given time.
 
 var tam;
 
+var score = 0;
+
 function setup() {
   createCanvas(800, 600);
   background(backColor);
@@ -27,6 +29,7 @@ function draw() {
   }
   image(img, mouseX, mouseY, img.width / 3, img.height / 3);
   tam.update(mouseX, mouseY);
+  drawHUD();
 }
 
 function getObstacles() {
@@ -36,5 +39,9 @@ function getObstacles() {
 }
 
 function drawHUD() {
-  
+  fill(255);
+  text("FREC APPLICATION '19 Creative Component", 5, 15);
+  text("Ethan Peterson", 5, 30);
+  var scoreString = "Score: " + score;
+  text(scoreString, width - 70, 15);
 }

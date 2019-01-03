@@ -1,7 +1,7 @@
 function Obstacle(img) {
   // Constructor code
   this.img = img;
-  this.possibleX = [900, -100];
+  this.possibleX = [900, -100, 400];
   this.possibleY = [-100, 700];
   
   this.y = 0;
@@ -9,7 +9,7 @@ function Obstacle(img) {
   
   this.mode = 0;
 
-  this.xIdx = round(random(1));
+  this.xIdx = round(random(2));
   this.yIdx = round(random(1));
   print(this.xIdx);
   this.x = this.possibleX[this.xIdx];
