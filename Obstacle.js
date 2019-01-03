@@ -37,8 +37,8 @@ function Obstacle(img) {
       this.y = this.y - 1;
     }
     this.box.update(this.x, this.y);
-    this.box.check(tamBox);
     image(this.img, this.x, this.y, this.w, this.h);
+    return this.box.check(tamBox);
   }
   
 }

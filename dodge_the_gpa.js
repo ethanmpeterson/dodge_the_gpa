@@ -7,7 +7,7 @@ var obstacles = [0, 0, 0, 0]; // max of 4 obstacles at any given time.
 var tam;
 
 var score = 0;
-
+var mode = 0; // 0 for game in session 1 for game over.
 function setup() {
   createCanvas(800, 600);
   background(backColor);
@@ -23,13 +23,20 @@ function setup() {
 }
 
 function draw() {
-  background(backColor);
-  for (var i = 0; i < 3; i++) {
-    obstacles[i].update(tam);
+  if (mode == 0) {
+    background(backColor);
+    for (var i = 0; i < 3; i++) {
+      if (obstacles[i].update(tam)) {
+        mode = 1;
+        break;
+      }
+    }
+    image(img, mouseX, mouseY, img.width / 3, img.height / 3);
+    tam.update(mouseX, mouseY);
+    drawHUD();
+  } else if (mode == 1) {
+    gameOverScreen();
   }
-  image(img, mouseX, mouseY, img.width / 3, img.height / 3);
-  tam.update(mouseX, mouseY);
-  drawHUD();
 }
 
 function getObstacles() {
@@ -44,4 +51,8 @@ function drawHUD() {
   text("Ethan Peterson", 5, 30);
   var scoreString = "Score: " + score;
   text(scoreString, width - 70, 15);
+}
+
+function gameOverScreen() {
+
 }
