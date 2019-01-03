@@ -54,5 +54,8 @@ function drawHUD() {
 }
 
 function gameOverScreen() {
-
+  background(backColor);
+  fill(255);
+  textSize(32);
+  text("GAME OVER", width / 2, height / 2);
 }
