@@ -9,14 +9,18 @@ function Obstacle(img) {
   
   this.mode = 0;
 
-  this.xIdx = random(1);
-  this.yIdx = random(1);
+  this.xIdx = round(random(1));
+  this.yIdx = round(random(1));
+  print(this.xIdx);
   this.x = this.possibleX[this.xIdx];
   this.y = this.possibleY[this.yIdx];
   
   // test
-  this.x = 400;
-  this.y = 300;
+  //this.x = 400;
+  //this.y = 300;
+
+  this.w = 150;
+  this.h = 150;
 
   this.update = function() {
     // ADD HIT DETECTION USING TAM POS
@@ -33,7 +37,7 @@ function Obstacle(img) {
     } else if (this.yIdx == 1) {
       this.y = this.y - 1;
     }
-    image(this.img, this.x, this.y);
+    image(this.img, this.x, this.y, this.w, this.h);
   }
   
 }

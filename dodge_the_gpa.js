@@ -18,12 +18,14 @@ function setup() {
 
 function draw() {
   background(backColor);
-  obstacles[0].update();
+  for (var i = 0; i < 3; i++) {
+    obstacles[i].update();
+  }
   image(img, mouseX, mouseY, img.width / 3, img.height / 3);
 }
 
 function getObstacles() {
-  for (var i = 0; i < 4; i = i + 1) {
+  for (var i = 0; i < 3; i = i + 1) {
     obstacles[i] = new Obstacle(imgs[i]);
   }
 }
