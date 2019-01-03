@@ -57,5 +57,7 @@ function gameOverScreen() {
   background(backColor);
   fill(255);
   textSize(32);
-  text("GAME OVER", width / 2, height / 2);
+  text("GAME OVER", width / 2 - textWidth("GAME OVER") / 2, height / 2);
+  textSize(16);
+  text("Reload Page to start a new game", width / 2 - textWidth("Reload Page to start a new game") / 2, height / 2 + 50);
 }
