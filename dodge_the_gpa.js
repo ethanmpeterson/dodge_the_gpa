@@ -3,6 +3,9 @@ var img;
 
 var backColor = 155;
 var obstacles = [0, 0, 0, 0]; // max of 4 obstacles at any given time.
+
+var tam;
+
 function setup() {
   createCanvas(800, 600);
   background(backColor);
@@ -14,14 +17,16 @@ function setup() {
   ];
   print(imgs);
   getObstacles();
+  tam = new HitBox(mouseX, mouseY, img.width / 3, img.height / 3);
 }
 
 function draw() {
   background(backColor);
   for (var i = 0; i < 3; i++) {
-    obstacles[i].update();
+    obstacles[i].update(tam);
   }
   image(img, mouseX, mouseY, img.width / 3, img.height / 3);
+  tam.update(mouseX, mouseY);
 }
 
 function getObstacles() {

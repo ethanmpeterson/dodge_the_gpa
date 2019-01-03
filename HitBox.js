@@ -10,7 +10,11 @@ function HitBox(x, y, w, h) {
   }
 
   this.check = function(box) {
-    
+    if (this.x < box.x + box.w && this.x + this.w > box.x && this.y < box.y + box.h && this.y + this.h > box.y) {
+        print("collsion");
+    } else {
+        // NO COLLISION
+    }
   }
 
 }

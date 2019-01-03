@@ -15,14 +15,13 @@ function Obstacle(img) {
   this.x = this.possibleX[this.xIdx];
   this.y = this.possibleY[this.yIdx];
   
-  // test
-  //this.x = 400;
-  //this.y = 300;
 
   this.w = 150;
   this.h = 150;
 
-  this.update = function() {
+  this.box = new HitBox(this.x, this.y, this.w, this.h);
+
+  this.update = function(tamBox) {
     // ADD HIT DETECTION USING TAM POS
     
     // after collision check incriment position
@@ -37,6 +36,8 @@ function Obstacle(img) {
     } else if (this.yIdx == 1) {
       this.y = this.y - 1;
     }
+    this.box.update(this.x, this.y);
+    this.box.check(tamBox);
     image(this.img, this.x, this.y, this.w, this.h);
   }
   
