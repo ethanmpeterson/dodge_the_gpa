@@ -2,7 +2,7 @@ var imgs;
 var img;
 
 var backColor = 155;
-var obstacles = [0, 0, 0, 0]; // max of 4 obstacles at any given time.
+var obstacles = [0, 0, 0]; // max of 4 obstacles at any given time.
 
 var tam;
 
@@ -23,11 +23,11 @@ function setup() {
   print(img.width);
   tam = new HitBox(mouseX, mouseY, 274 / 3, 171 / 3);
 }
-
+//var count = 0;
 function draw() {
   if (mode == 0) {
     background(backColor);
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < obstacles.length; i++) {
       if (obstacles[i].update(tam)) {
         mode = 1;
         break;
@@ -36,6 +36,12 @@ function draw() {
     drawTam();
     drawHUD();
     score = score + 1;
+    if (score % 500 == 0) {
+      // spawn more obstacles here
+      ob = new Obstacle(imgs[round(random(0, 2))]);
+      obstacles.push(ob);
+      //count = count + 1;
+    }
   } else if (mode == 1) {
     gameOverScreen();
   }

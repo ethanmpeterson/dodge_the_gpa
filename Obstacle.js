@@ -31,6 +31,7 @@ function Obstacle(img) {
 
   this.xSign = 1;
   this.ySign = 1;
+  
   this.update = function(tamBox) {
     this.bound();
     this.x = this.x + 1 * this.xSign; 
