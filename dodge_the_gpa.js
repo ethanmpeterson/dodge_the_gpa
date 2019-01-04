@@ -56,7 +56,7 @@ function getObstacles() {
 function drawTam() {
   image(img, mouseX, mouseY, img.width / 3, img.height / 3);
   fill(255, 0, 0, 127);
-  rect(mouseX, mouseY, img.width / 3, img.height / 3);
+  //rect(mouseX, mouseY, img.width / 3, img.height / 3);
   tam.update(mouseX, mouseY);
 }
 

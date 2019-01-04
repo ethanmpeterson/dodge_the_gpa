@@ -31,7 +31,7 @@ function Obstacle(img) {
 
   this.xSign = 1;
   this.ySign = 1;
-  
+
   this.update = function(tamBox) {
     this.bound();
     this.x = this.x + 1 * this.xSign; 
@@ -40,7 +40,7 @@ function Obstacle(img) {
     
     image(this.img, this.x, this.y, this.w, this.h);
     fill(255, 0, 0, 127);
-    rect(this.x, this.y, this.w, this.h);
+    //rect(this.x, this.y, this.w, this.h);
 
     this.box.update(this.x, this.y);
     return this.box.check(tamBox);
