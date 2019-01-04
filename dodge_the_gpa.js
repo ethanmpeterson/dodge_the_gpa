@@ -19,7 +19,9 @@ function setup() {
   ];
   print(imgs);
   getObstacles();
-  tam = new HitBox(mouseX, mouseY, img.width / 3, img.height / 3);
+  print(img.height);
+  print(img.width);
+  tam = new HitBox(mouseX, mouseY, 274 / 3, 171 / 3);
 }
 
 function draw() {

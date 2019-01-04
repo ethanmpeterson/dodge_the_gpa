@@ -36,10 +36,12 @@ function Obstacle(img) {
     } else if (this.yIdx == 1) {
       this.y = this.y - 1;
     }
-    this.box.update(this.x, this.y);
+    
     image(this.img, this.x, this.y, this.w, this.h);
     fill(255, 0, 0, 127);
     rect(this.x, this.y, this.w, this.h);
+
+    this.box.update(this.x, this.y);
     return this.box.check(tamBox);
   }
   
