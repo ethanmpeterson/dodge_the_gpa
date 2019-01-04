@@ -35,6 +35,7 @@ function draw() {
     }
     drawTam();
     drawHUD();
+    score = score + 1;
   } else if (mode == 1) {
     gameOverScreen();
   }
