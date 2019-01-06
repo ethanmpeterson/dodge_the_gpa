@@ -55,7 +55,7 @@ function getObstacles() {
 
 function drawTam() {
   image(img, mouseX, mouseY, img.width / 3, img.height / 3);
-  fill(255, 0, 0, 127);
+  //fill(255, 0, 0, 127);
   //rect(mouseX, mouseY, img.width / 3, img.height / 3);
   tam.update(mouseX, mouseY);
 }
@@ -72,7 +72,11 @@ function gameOverScreen() {
   background(backColor);
   fill(255);
   textSize(32);
+  fill(150, 0, 205);
+  text("Silly Frosh!!!", width / 2 - textWidth("Silly Frosh!!!") / 2, 100);
+  fill(255);
   text("GAME OVER", width / 2 - textWidth("GAME OVER") / 2, height / 2);
+  text("Score: " + score, width / 2 - textWidth("Score: " + score) / 2, height / 2 + 30);
   textSize(16);
   text("Reload Page to start a new game", width / 2 - textWidth("Reload Page to start a new game") / 2, height / 2 + 50);
 }

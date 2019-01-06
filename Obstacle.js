@@ -39,7 +39,7 @@ function Obstacle(img) {
     
     
     image(this.img, this.x, this.y, this.w, this.h);
-    fill(255, 0, 0, 127);
+    //fill(255, 0, 0, 127);
     //rect(this.x, this.y, this.w, this.h);
 
     this.box.update(this.x, this.y);
